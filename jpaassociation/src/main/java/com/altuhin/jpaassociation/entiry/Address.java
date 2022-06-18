@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,6 +19,7 @@ import javax.persistence.Table;
 @Table(name = "address")
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(chain = true)
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
