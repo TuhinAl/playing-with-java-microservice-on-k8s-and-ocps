@@ -16,32 +16,23 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "address")
+@Table(name = "student")
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-public class Address {
+public class Course {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "course_id")
     private Long id;
 
-    @Column(name = "city")
-    private String city;
+    @Column(name = "course_name")
+    private String courseName;
 
-    @Column(name = "division")
-    private String division;
+    @Column(name = "course_code")
+    private String courseCode;
 
-    @Column(name = "postal_code")
-    private String postalCode;
-
-//    @OneToOne(mappedBy = "address", cascade = {CascadeType.DETACH,
-//            CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 //    private Student student;
 
-    public Address(String city, String division, String postalCode) {
-        this.city = city;
-        this.division = division;
-        this.postalCode = postalCode;
-    }
 }
