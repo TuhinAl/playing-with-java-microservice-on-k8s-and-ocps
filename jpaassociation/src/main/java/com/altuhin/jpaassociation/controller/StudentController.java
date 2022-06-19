@@ -4,7 +4,7 @@ import com.altuhin.jpaassociation.dto.StudentDto;
 import com.altuhin.jpaassociation.entiry.Student;
 import com.altuhin.jpaassociation.service.StudentService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,10 +24,20 @@ public class StudentController {
         return studentService.saveStudent(studentDto);
     }
 
-    @DeleteMapping("/{id}")
-    public String getStudentWithAddressById(@PathVariable Long id) {
+//    @DeleteMapping("/{id}")
+//    public String getStudentWithAddressById(@PathVariable Long id) {
+//
+//        return studentService.getStudentWithAddressById(id);
+//    }
 
-        return studentService.getStudentWithAddressById(id);
+
+    @PostMapping("/save/course")
+    public StudentDto saveStudentAndCourse(@RequestBody StudentDto studentDto) {
+        return studentService.saveStudentAndCourse(studentDto);
     }
 
+    @GetMapping("/course/{id}")
+    public StudentDto getStudentAndCourse(@PathVariable Long id) {
+        return studentService.getStudentAndCourse(id);
+    }
 }

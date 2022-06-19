@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "student")
+@Table(name = "course")
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
@@ -33,6 +33,11 @@ public class Course {
     @Column(name = "course_code")
     private String courseCode;
 
+    public Course(String courseName, String courseCode) {
+        this.courseName = courseName;
+        this.courseCode = courseCode;
+    }
 //    private Student student;
+
 
 }
